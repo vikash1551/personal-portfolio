@@ -16,9 +16,9 @@ export default function SmoothScroll({
     if (prefersReducedMotion) return;
 
     const lenis = new Lenis({
-      duration: 1.2,
-      easing: (t: number) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-      touchMultiplier: 2,
+      lerp: 0.05, // Lower value makes it smoother and more floaty
+      wheelMultiplier: 1,
+      touchMultiplier: 1.5,
       infinite: false,
     });
 
