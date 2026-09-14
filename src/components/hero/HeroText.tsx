@@ -153,11 +153,7 @@ export default function HeroText({ onExploreClick, hideCTA }: HeroTextProps) {
         </div>
         <div className="h-[50px] sm:h-[60px] flex items-center">
           <span 
-            className="text-blue-600 font-bold"
-            style={{ 
-              fontFamily: '"MV Boli", cursive, sans-serif', 
-              fontSize: '36px' 
-            }}
+            className="text-blue-600 font-architects font-bold text-[36px] sm:text-5xl uppercase tracking-wide"
           >
             {text}<span className="animate-pulse font-sans font-light text-black">|</span>
           </span>

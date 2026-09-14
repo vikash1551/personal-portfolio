@@ -3,6 +3,7 @@
 import { useRef, useState, useEffect } from "react";
 import { motion, useInView, AnimatePresence } from "framer-motion";
 import { Send, Mail, GitFork, Link as LinkIcon, Power, Download, Maximize2 } from "lucide-react";
+import { SiLeetcode } from "react-icons/si";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 40 },
@@ -572,7 +573,7 @@ export default function Contact() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.4 }}
-          className="flex items-center justify-center gap-6 sm:gap-8 mt-80 sm:mt-48 w-full relative z-20"
+          className="flex flex-wrap items-center justify-center gap-6 sm:gap-8 mt-80 sm:mt-48 w-full relative z-20"
         >
           <a href="https://github.com/vikash1551" target="_blank" rel="noopener noreferrer" className="p-4 bg-white border-[3px] border-black text-black hover:bg-[#ff5500] hover:text-white hover:-translate-y-1 transition-all duration-300 shadow-[4px_4px_0_0_#000] hover:shadow-[6px_6px_0_0_#000]">
             <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -585,6 +586,9 @@ export default function Contact() {
               <rect width="4" height="12" x="2" y="9"/>
               <circle cx="4" cy="4" r="2"/>
             </svg>
+          </a>
+          <a href="https://leetcode.com/u/uxu8XJStol/" target="_blank" rel="noopener noreferrer" className="p-4 bg-white border-[3px] border-black text-black hover:bg-[#ff5500] hover:text-white hover:-translate-y-1 transition-all duration-300 shadow-[4px_4px_0_0_#000] hover:shadow-[6px_6px_0_0_#000]">
+            <SiLeetcode size={28} />
           </a>
           <a href="https://www.instagram.com/xo__vikash_/" target="_blank" rel="noopener noreferrer" className="p-4 bg-white border-[3px] border-black text-black hover:bg-[#ff5500] hover:text-white hover:-translate-y-1 transition-all duration-300 shadow-[4px_4px_0_0_#000] hover:shadow-[6px_6px_0_0_#000]">
             <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">

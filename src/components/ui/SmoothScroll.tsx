@@ -16,10 +16,11 @@ export default function SmoothScroll({
     if (prefersReducedMotion) return;
 
     const lenis = new Lenis({
-      lerp: 0.05, // Lower value makes it smoother and more floaty
+      lerp: 0.05, 
       wheelMultiplier: 1,
-      touchMultiplier: 1.5,
+      touchMultiplier: 2,
       infinite: false,
+      syncTouch: true, // Enables smooth scroll on mobile touch
     });
 
     function raf(time: number) {

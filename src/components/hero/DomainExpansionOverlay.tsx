@@ -56,18 +56,18 @@ export default function DomainExpansionOverlay({
           >
             <motion.div
               animate={{
-                y: [0, -4, 4, -4, 0],
-                scale: [1, 1.05, 1.05, 1.05, 1],
+                y: [0, -15, 0],
+                scale: [1, 1.03, 1],
                 filter: [
                   "drop-shadow(0 20px 40px rgba(0,0,0,0.8))",
-                  "drop-shadow(0 0 50px rgba(160,0,255,0.4))",
-                  "drop-shadow(0 0 80px rgba(160,0,255,0.6))",
+                  "drop-shadow(0 0 60px rgba(160,0,255,0.6))",
+                  "drop-shadow(0 20px 40px rgba(0,0,0,0.8))",
                 ],
               }}
               transition={{
-                y: { duration: 0.15, repeat: 20, ease: "easeInOut" },
-                scale: { duration: 3, ease: "easeOut" },
-                filter: { duration: 3, ease: "easeOut" },
+                duration: 4,
+                ease: "easeInOut",
+                repeat: Infinity,
               }}
             >
               <Image
