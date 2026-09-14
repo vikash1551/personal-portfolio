@@ -68,9 +68,9 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${cinzel.variable} ${spaceGrotesk.variable} ${jetbrainsMono.variable} ${architectsDaughter.variable} ${hammockFont.variable}`}
+      className={`${cinzel.variable} ${spaceGrotesk.variable} ${jetbrainsMono.variable} ${architectsDaughter.variable} ${hammockFont.variable} overflow-x-hidden`}
     >
-      <body className="bg-[#fffdd0] text-black antialiased">
+      <body className="bg-[#fffdd0] text-black antialiased overflow-x-hidden w-full relative">
         <div className="bg-splatter" aria-hidden="true" />
         <div className="noise-overlay" aria-hidden="true" />
         {children}
