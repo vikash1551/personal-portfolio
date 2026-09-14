@@ -64,7 +64,7 @@ export default function Navbar({ isHidden = false }: { isHidden?: boolean }) {
                 <a
                   key={link.label}
                   href={`#${link.href}`}
-                  className="relative px-3 sm:px-4 lg:px-6 py-2 font-display text-[10px] sm:text-xs md:text-sm tracking-widest uppercase font-black transition-colors duration-300 rounded-lg whitespace-nowrap flex-shrink-0 group"
+                  className="relative px-3 sm:px-4 lg:px-6 py-2 font-architects text-xs sm:text-sm md:text-base tracking-widest uppercase font-bold transition-colors duration-300 rounded-lg whitespace-nowrap flex-shrink-0 group"
                   onClick={() => setActiveSection(link.href)}
                 >
                   {isActive && (

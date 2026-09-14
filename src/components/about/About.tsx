@@ -24,7 +24,7 @@ export default function About() {
       <div className="section-container" ref={ref}>
         {/* Section header */}
         <motion.div
-          className="mb-40"
+          className="mb-32 sm:mb-40 lg:mb-48"
           initial="hidden"
           animate={isInView ? "visible" : "hidden"}
           variants={{

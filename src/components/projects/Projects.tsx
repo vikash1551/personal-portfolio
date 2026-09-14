@@ -57,7 +57,7 @@ export default function Projects() {
       <div className="section-container" ref={ref}>
         {/* Section header */}
         <motion.div
-          className="mb-40 relative w-fit"
+          className="mb-32 sm:mb-40 lg:mb-48 relative w-fit"
           initial="hidden"
           animate={isInView ? "visible" : "hidden"}
           variants={{

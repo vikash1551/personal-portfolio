@@ -46,7 +46,7 @@ export default function Contact() {
       <div className="section-container" ref={ref}>
         {/* Section Header */}
         <motion.div
-          className="mb-40 relative w-fit"
+          className="mb-32 sm:mb-40 lg:mb-48 relative w-fit"
           initial="hidden"
           animate={isInView ? "visible" : "hidden"}
           variants={{
@@ -85,6 +85,9 @@ export default function Contact() {
           </div>
           <motion.div variants={fadeUp} className="divider max-w-[200px]" />
         </motion.div>
+
+        {/* Dummy Space */}
+        <div className="h-4 sm:h-6 w-full" />
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 relative">
           
@@ -554,11 +557,11 @@ export default function Contact() {
                 {/* Tape */}
                 <div className="absolute -top-4 left-1/2 -translate-x-1/2 w-28 h-8 bg-white/70 border-2 border-black rotate-[-3deg] opacity-90 shadow-sm" />
                 
-                <h3 className="text-3xl sm:text-4xl font-black mb-6 uppercase leading-tight tracking-tight text-black">
+                <h3 className="font-architects text-3xl sm:text-4xl font-bold mb-6 uppercase leading-tight tracking-tight text-black">
                   Want To Build <br/> <span className="text-[#ff5500]">Something Cool?</span>
                 </h3>
                 
-                <p className="text-lg sm:text-xl font-medium leading-relaxed text-black/80">
+                <p className="font-architects text-lg sm:text-xl font-bold leading-relaxed text-black/90">
                  Let's connect, collaborate, or just chat about exciting ideas. Feel free to reach out to me via the links below!
                 </p>
         

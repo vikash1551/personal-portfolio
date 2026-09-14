@@ -80,18 +80,27 @@ const SkillTicketCard = ({
           style={{ clipPath: getClipPath(13.8), padding: '2px', paddingRight: '8px' }}
         >
           <div 
-            className="w-full h-full bg-[#fffdd0] group-hover:bg-black transition-colors duration-300 p-4 sm:p-5 flex flex-col relative"
+            className="w-full h-full bg-[#fffdd0] group-hover:bg-black transition-colors duration-300 p-4 sm:p-5 flex flex-col relative overflow-hidden"
             style={{ clipPath: getClipPath(11) }}
           >
+            {/* Subtle grid background */}
+            <div 
+              className="absolute inset-0 opacity-20 group-hover:opacity-10 pointer-events-none transition-opacity duration-500 text-black group-hover:text-white" 
+              style={{ 
+                backgroundImage: 'radial-gradient(currentColor 1px, transparent 1px)', 
+                backgroundSize: '16px 16px',
+                backgroundPosition: '0 0'
+              }} 
+            />
           <div className="flex-1 flex flex-col justify-center py-4">
             {/* Top Header */}
             <div className="flex justify-between items-start mb-3">
               <div className="flex items-center gap-4">
-                <span className="font-serif font-black text-4xl sm:text-5xl text-[#ff5500] leading-none">
+                <span className="font-architects font-bold text-4xl sm:text-5xl text-[#ff5500] leading-none">
                   {numStr}
                 </span>
                 <div className="w-[2px] h-10 bg-[#ff5500] mx-1" />
-                <h3 className="font-serif font-black text-xl sm:text-2xl text-black group-hover:text-white uppercase leading-none tracking-tight">
+                <h3 className="font-architects font-bold text-xl sm:text-2xl text-black group-hover:text-white uppercase leading-none tracking-tight">
                   {category.title}
                 </h3>
               </div>
@@ -101,14 +110,15 @@ const SkillTicketCard = ({
             </div>
 
             {/* Dashed Separator */}
-            <div className="w-full border-t-[2px] border-dashed border-[#ff5500] opacity-50 my-4" />
+            <div className="w-full border-t-[2px] border-dashed border-[#ff5500] opacity-50 mt-4 mb-2" />
+            <div className="h-4 w-full" />
 
             {/* Skills Pills */}
             <div className="flex flex-wrap gap-2.5 sm:gap-3">
               {category.skills.map((skill) => (
                 <span 
                   key={skill}
-                  className="px-3 py-1.5 sm:px-4 sm:py-2 border-[1.5px] border-black group-hover:border-white text-black group-hover:text-white bg-transparent font-semibold text-sm sm:text-base rounded-md transition-colors duration-300 shadow-[2px_2px_0_0_#000] group-hover:shadow-[2px_2px_0_0_#fff]"
+                  className="px-3 py-1.5 sm:px-4 sm:py-2 border-[1.5px] border-black group-hover:border-white text-black group-hover:text-white bg-transparent font-architects font-bold text-sm sm:text-base rounded-md transition-colors duration-300 shadow-[2px_2px_0_0_#000] group-hover:shadow-[2px_2px_0_0_#fff]"
                 >
                   {skill}
                 </span>
@@ -119,7 +129,7 @@ const SkillTicketCard = ({
           {/* Bottom Footer & Arrow */}
           <div className="mt-auto flex justify-between items-end">
             <div className="flex items-center gap-2">
-              <span className="font-serif font-bold text-[10px] text-black group-hover:text-white opacity-60">{numStr}</span>
+              <span className="font-architects font-bold text-[12px] text-black group-hover:text-white opacity-60">{numStr}</span>
               <div className="h-[2px] w-12 bg-[#ff5500]" />
               <div className="flex gap-1">
                 {[...Array(3)].map((_, i) => (
@@ -158,7 +168,7 @@ export default function Skills() {
       <div className="section-container" ref={ref}>
         {/* Section Header */}
         <motion.div
-          className="mb-40"
+          className="mb-32 sm:mb-40 lg:mb-48"
           initial="hidden"
           animate={isInView ? "visible" : "hidden"}
           variants={{
@@ -174,6 +184,9 @@ export default function Skills() {
           </motion.h2>
           <motion.div variants={fadeUp} className="divider max-w-[200px]" />
         </motion.div>
+
+        {/* Dummy Space */}
+        <div className="h-4 sm:h-6 w-full" />
 
         {/* Mobile View: Shows all skills, no incremental reveal */}
         <div className="grid grid-cols-1 gap-6 md:hidden">

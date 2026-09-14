@@ -86,7 +86,7 @@ export default function Experience() {
       <div className="section-container" ref={ref}>
         {/* Section header */}
         <motion.div
-          className="mb-40 relative w-fit"
+          className="mb-32 sm:mb-40 lg:mb-48 relative w-fit"
           initial="hidden"
           animate={isInView ? "visible" : "hidden"}
           variants={{
@@ -129,10 +129,17 @@ export default function Experience() {
           </div>
           <motion.div variants={fadeUp} className="divider max-w-[200px]" />
         </motion.div>
+        
+        {/* Dummy Space to prevent overlap with header/doodles */}
+        <div className="h-4 sm:h-6 w-full" />
 
         {/* Comic/Manga Style Cards */}
         <div className="flex flex-col gap-[32px] max-w-6xl mx-auto">
-          {hackathons.map((hack, i) => (
+          {hackathons.map((hack, i) => {
+            const isEven = i % 2 === 0;
+            const rotationClass = isEven ? "rotate-1" : "-rotate-1";
+            
+            return (
             <motion.div
               key={hack.name}
               initial={{ opacity: 0, y: 50 }}
@@ -142,8 +149,9 @@ export default function Experience() {
                 delay: i * 0.2,
                 ease: [0.16, 1, 0.3, 1],
               }}
-              className="group relative flex flex-col md:flex-row w-full bg-[#fffdd0] hover:bg-black border-[4px] border-black hover:border-[#ff5500] transition-colors duration-500 overflow-hidden shadow-[8px_8px_0_0_rgba(0,0,0,1)] hover:shadow-[12px_12px_0px_rgba(255,85,0,0.5)]"
+              className="w-full group perspective-1000"
             >
+              <div className={`relative flex flex-col md:flex-row w-full bg-[#fffdd0] group-hover:bg-black border-[4px] border-black group-hover:border-[#ff5500] transition-all duration-500 overflow-hidden shadow-[8px_8px_0_0_rgba(0,0,0,1)] group-hover:shadow-[12px_12px_0px_rgba(255,85,0,0.5)] group-hover:-translate-y-2 group-hover:rotate-0 ${rotationClass}`}>
               
               {/* Subtle comic halftone background */}
               <div 
@@ -159,10 +167,10 @@ export default function Experience() {
                 
                 {/* Top Badges */}
                 <div className="flex flex-wrap items-center gap-2 sm:gap-4 mb-4">
-                  <span className="border-[3px] border-black group-hover:border-[#ff5500] bg-[#ff5500] group-hover:bg-[#fffdd0] text-black px-3 py-1 font-black text-sm sm:text-base uppercase tracking-wider transition-colors duration-500 shadow-[2px_2px_0_0_#000] group-hover:shadow-[2px_2px_0_0_#ff5500]">
+                  <span className="font-architects border-[3px] border-black group-hover:border-[#ff5500] bg-[#ff5500] group-hover:bg-[#fffdd0] text-black px-3 py-1 font-black text-sm sm:text-base uppercase tracking-wider transition-colors duration-500 shadow-[2px_2px_0_0_#000] group-hover:shadow-[2px_2px_0_0_#ff5500]">
                     {hack.date}
                   </span>
-                  <span className="border-[3px] border-black group-hover:border-[#ff5500] bg-white group-hover:bg-black text-black group-hover:text-[#ff5500] px-3 py-1 font-black text-sm sm:text-base uppercase tracking-wider transition-colors duration-500 shadow-[2px_2px_0_0_#000] group-hover:shadow-[2px_2px_0_0_#ff5500]">
+                  <span className="font-architects border-[3px] border-black group-hover:border-[#ff5500] bg-white group-hover:bg-black text-black group-hover:text-[#ff5500] px-3 py-1 font-black text-sm sm:text-base uppercase tracking-wider transition-colors duration-500 shadow-[2px_2px_0_0_#000] group-hover:shadow-[2px_2px_0_0_#ff5500]">
                     {hack.duration}
                   </span>
                 </div>
@@ -279,8 +287,10 @@ export default function Experience() {
                 </div>
               </div>
 
+              </div>
             </motion.div>
-          ))}
+            );
+          })}
         </div>
       </div>
 
